@@ -32,8 +32,8 @@ class Tree:
         >>> t = Tree("carbs", [])
         >>> t1 = Tree("breakfast", [t])
         >>> t1.__contains__("rice")
-        True
-        >>> t1.__contains__("egg")
+        False
+        >>> t1.__contains__("carbs")
         True
         """
         if self.root is None:
