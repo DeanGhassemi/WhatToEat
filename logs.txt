@@ -4,8 +4,7 @@ Day 1: Creating the main method
 
 Day 2: Started creating a tree data structure
 
-Day 3 (Nov 11, 2021):
+Day 3 (Nov 22, 2021):
     - Started logging progress
     - Removed tree
     - Created Food class
-    
