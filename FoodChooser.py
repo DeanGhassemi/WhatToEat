@@ -1,5 +1,6 @@
 from __future__ import annotations
 from typing import List, Optional
+import json
 
 class Food:
     """ Information of food
@@ -47,10 +48,11 @@ class Food:
     def getProteins(self) -> int:
         return self._proteins
 
+
 if __name__ == '__main__':
     print("Instructions:")
     print("After entering an ingredient, click enter. " +
-          "Then enter the next   one")
+          "Then enter the next one")
     print("When you are done, please type finished")
     print("What ingredients do you have?")
     ingredients = []
@@ -61,4 +63,10 @@ if __name__ == '__main__':
             finished = True
         else:
             ingredients.append(food.strip())
+    f = open('data.json')
+    data = json.load(f)
+    for i in data['details']:
+        print(i)
+    f.close()
+    
     

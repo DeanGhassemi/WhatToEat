@@ -8,3 +8,6 @@ Day 3 (Nov 22, 2021):
     - Started logging progress
     - Removed tree
     - Created Food class
+
+Day 4 (Nov 23, 2021):
+    - Started json data file
