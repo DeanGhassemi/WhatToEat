@@ -4,10 +4,18 @@ Day 1: Creating the main method
 
 Day 2: Started creating a tree data structure
 
-Day 3 (Nov 22, 2021):
+Nov 22, 2021:
     - Started logging progress
     - Removed tree
     - Created Food class
 
-Day 4 (Nov 23, 2021):
+Nov 23, 2021:
     - Started json data file
+Nov 24, 2021:
+    - Created a method to loop through the JSON file for ingredients
+        - creates objects of each food
+        - added proteins to protein set, carbs to carbs set, 
+          and fats to fats set
+    - changed the data.json to ingredients.json
+    - added sets for each macronutrient
+    - Issues with object names and name of foods
