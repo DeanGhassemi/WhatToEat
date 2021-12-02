@@ -21,6 +21,10 @@ Nov 24, 2021:
     - Issues with object names and name of foods
 Dec 2, 2021:
     - Introduced TrieTree, TrieNode (Abstract)
+    - Issues with TrieTree
+        - Autocorrect doesnt work
+        - Use recursion for __delitem__
+        - Try a different sorting method for dictionary
     - Fixed issues with object names and name of foods
     - Fixed looping error
     - Added new Attribute to Food class
