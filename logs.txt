@@ -19,3 +19,8 @@ Nov 24, 2021:
     - changed the data.json to ingredients.json
     - added sets for each macronutrient
     - Issues with object names and name of foods
+Dec 2, 2021:
+    - Introduced TrieTree, TrieNode (Abstract)
+    - Fixed issues with object names and name of foods
+    - Fixed looping error
+    - Added new Attribute to Food class

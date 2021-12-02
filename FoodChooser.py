@@ -1,5 +1,6 @@
 from __future__ import annotations
 from typing import List, Optional
+import TrieNode, TrieTree
 import json
 
 
@@ -9,9 +10,9 @@ class Food:
     
     === Attributes ===
 
+    _name: str
     _macronutrient: str
     _calories: int
-
     _carbs: int
     _fats: int
     _proteins: int
@@ -19,10 +20,12 @@ class Food:
     """
     
 
-    def __init__(self, macronutrient: str, calories=0, 
+    def __init__(self, name: str, macronutrient: str, calories=0, 
                  carbs=0, fats=0, protein=0) -> None:
         """
         Initialize and declare each attribute
+
+        name: name of the food
 
         macronutrient: type of macronutrient
 
@@ -31,20 +34,23 @@ class Food:
         carbs, fats and proteins are measured in grams
         
         Parameters:
-
+            name: str
             macronutrient: str
             calories: int
-
             carbs: int
             fats: int
             proteins: int
 
         """
+        self._name = name
         self._macronutrient = macronutrient
         self._calories = calories
         self._carbs = carbs
         self._fats = fats
         self._protein = protein
+        
+    def getName(self) -> str:
+        return self._name   
         
     def getMacronutrient(self) -> str:
         return self._macronutrient
@@ -75,22 +81,23 @@ def startProgram() -> None:
 def loopJSON() -> None:
 
     # For every food in data
-    for detail in ingredients['details']:
+    for detail in data['details']:
 
         #Only create object if food is part of the ingredients
 
         if detail['food'] in lstIngredients:
-            detail['food'] = Food(detail['macronutrient'], 
+            detail['food'] = Food(detail['food'], detail['macronutrient'], 
                                            detail['calories'], detail['carbs'], 
                                            detail['fats'], detail['protein'])
 
             # Add to sets
+            foodName = detail['food'].getName()
             if detail['food'].getMacronutrient() == 'carb':
-                carbs.add(detail['food'])
+                carbs.add(foodName)
             elif detail['food'].getMacronutrient() == 'fat':
-                fats.add(detail['food'])
+                fats.add(foodName)
             else:
-                proteins.add(detail['food'])
+                proteins.add(foodName)
 
 
 #------------------------------End Of Functions--------------------------------
@@ -110,7 +117,7 @@ if __name__ == '__main__':
         else:
             lstIngredients.append(food.strip())
 
-    f = open('data.json')
+    f = open('ingredients.json')
     data = json.load(f)
     
     # Sets
