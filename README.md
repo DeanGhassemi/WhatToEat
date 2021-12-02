@@ -15,6 +15,6 @@ To figure out which foods is a carb, fat or protein, I will collect my own data 
 
 ## Changes and Updates from the Plan
 
-Using a JSON file to store information of foods. It's my data file
+Using a JSON file to store information of foods. It's my data file.
 I am using a TrieTree for autocorrect in case the user misspells the word. I will need another data file for a bunch of names of foods.
 
