@@ -120,27 +120,7 @@ class TrieTree:
         """
         if not self.__contains__(key):
             return None
-        else:
-            index = 0
-            nodes = [self]
-            # go down the tree to find the last node and removing the ._value
-            while index != len(key):
-                if key[index] in list(self._children.keys()):
-                    self = self._children[key[index]]
-                    nodes.append(self)
-                    index += 1
-            self._value = ''
-            if self._children:  # Cannot remove a node that has children
-                return None
-            # Going up the tree and cleaning up the nodes/trie
-            while index != 0:
-                self = nodes[-2]
-                index -= 1
-                self._children.pop(key[index])
-                if len(self._children) >= 1:
-                    return None
-                nodes.pop(-1)
-            return None
+        # TODO
 
     # For sorting the trie
     def dict_sort(self, childrendict: dict) -> dict:
@@ -296,13 +276,6 @@ class TrieTree:
         ['dab', 'dad', 'dude']
         """
         # TODO
-        if self.__contains__(word):
-            return [word]
-        other = TrieTree()
-        other.insert(word)
-        possible_words = self.search(word, errorMax, 0,
-                                     self.common_prefix(word))
-        return possible_words
 
     # TASK 7
     def merge(self, otherTrie: TrieNode):
@@ -323,7 +296,7 @@ class TrieTree:
 
     def pPrint(self, _prefix="", _last=True, index=0):
         """
-        DONT CHANGE THIS
+        Pretty Print!!
         """
         ret = ''
         if index:
