@@ -28,3 +28,5 @@ Dec 2, 2021:
     - Fixed issues with object names and name of foods
     - Fixed looping error
     - Added new Attribute to Food class
+Dec 5, 2021:
+    - Removed code in TrieTree.py that was not recursive or not working
