@@ -1,7 +1,6 @@
 from __future__ import annotations
 from typing import List, Optional
-import TrieNode, TrieTree
-import json
+import noms
 
 
 class Food:
@@ -70,34 +69,6 @@ class Food:
 
 # ------------Functions below make the main function cleaner-------------------
 
-def startProgram() -> None:
-    print("Instructions:")
-    print("After entering an ingredient, click enter. " +
-
-          "Then enter the next one")
-    print("When you are done, please type done")
-    print("What ingredients do you have?")
-
-def loopJSON() -> None:
-
-    # For every food in data
-    for detail in data['details']:
-
-        #Only create object if food is part of the ingredients
-
-        if detail['food'] in lstIngredients:
-            detail['food'] = Food(detail['food'], detail['macronutrient'], 
-                                           detail['calories'], detail['carbs'], 
-                                           detail['fats'], detail['protein'])
-
-            # Add to sets
-            foodName = detail['food'].getName()
-            if detail['food'].getMacronutrient() == 'carb':
-                carbs.add(foodName)
-            elif detail['food'].getMacronutrient() == 'fat':
-                fats.add(foodName)
-            else:
-                proteins.add(foodName)
 
 
 #------------------------------End Of Functions--------------------------------
@@ -105,34 +76,9 @@ def loopJSON() -> None:
 
 if __name__ == '__main__':
 
-    startProgram()
-    lstIngredients = []
-
-    done = False
-
-    while not done:
-        food = input("")
-        if food == "done":
-            done = True
-        else:
-            lstIngredients.append(food.strip())
-
-    f = open('ingredients.json')
-    data = json.load(f)
+    print("Hello World")
+    key = "VOcXLMciuzKMWU16JJ2VN7C3YEp00NB3J2SBX1ww"
+    klient = noms.Client(key)
+    search_results = klient.search_query("Raw Broccoli")
+    print(search_results)
     
-    # Sets
-    carbs = set([])
-    fats = set([])
-    proteins = set([])
-
-    loopJSON()
-        
-
-    print(carbs)
-    print(fats)
-    print(proteins)
-
-    f.close()
-    
-    
-
