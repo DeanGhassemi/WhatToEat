@@ -34,3 +34,10 @@ Jan 7, 2022:
     - Removed TrieTree and TrieNode
     - Reworking FoodChooser
     - Trying out noms package index
+Jan 27, 2022:
+    - Removed noms package
+    - Reverted changes. Introduced data.json and old code from before
+    - Now meal chooser rather than food chooser
+        - Changed name of class to meal
+        - Added new details to json file
+    - Added meal types
