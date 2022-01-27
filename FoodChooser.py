@@ -1,26 +1,33 @@
 from __future__ import annotations
-from typing import List, Optional
-import noms
+from typing import Dict
 
 
-class Food:
+class Meal:
 
-    """ Information of food
+    """ Information of Meal
+    
+    Liquids are measured in tbsp
+    Macronutrients are measured in grams
+    Time is measured in minutes
     
     === Attributes ===
 
     _name: str
-    _macronutrient: str
+    _meal_of_day: str
+    _meal_type: str
+    _time: int
     _calories: int
     _carbs: int
     _fats: int
     _proteins: int
+    _ingredients: Dict[str, int]
 
     """
     
 
-    def __init__(self, name: str, macronutrient: str, calories=0, 
-                 carbs=0, fats=0, protein=0) -> None:
+    def __init__(self, name: str, meal_of_day: str, _meal_type: str,
+                 _time: int, calories: int, carbs: int, fats: int, protein: int,
+                 _ingredients: Dict[str, int]) -> None:
         """
         Initialize and declare each attribute
 
@@ -71,14 +78,27 @@ class Food:
 
 
 
+
 #------------------------------End Of Functions--------------------------------
 
 
 if __name__ == '__main__':
 
-    print("Hello World")
-    key = "VOcXLMciuzKMWU16JJ2VN7C3YEp00NB3J2SBX1ww"
-    klient = noms.Client(key)
-    search_results = klient.search_query("Raw Broccoli")
-    print(search_results)
+    print("Is this for breakfast, lunch or dinner?")
+    meal_of_day = input("")
+    f = open('data.json')
+    data = json.load(f)
     
+    # Meals
+    calorie_surplus = []
+    high_protein = []
+    high_fats = []
+    high_carbs = []
+    
+    meal_types = {
+        "calorie surplus": calorie_surplus,
+        "high in protein": high_in_protein,
+        "high in fats": high_in_fats
+    }
+
+    f.close()
