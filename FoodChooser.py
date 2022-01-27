@@ -1,5 +1,6 @@
 from __future__ import annotations
 from typing import Dict
+import pprint, json
 
 
 class Meal:
@@ -25,58 +26,73 @@ class Meal:
     """
     
 
-    def __init__(self, name: str, meal_of_day: str, _meal_type: str,
-                 _time: int, calories: int, carbs: int, fats: int, protein: int,
-                 _ingredients: Dict[str, int]) -> None:
+    def __init__(self, name: str, meal_of_day: str, meal_type: str,
+                 time: int, calories: int, carbs: int, fats: int, protein: int,
+                 ingredients: Dict[str, int]) -> None:
         """
         Initialize and declare each attribute
-
-        name: name of the food
-
-        macronutrient: type of macronutrient
-
-        calories: number of kcal
-
-        carbs, fats and proteins are measured in grams
         
         Parameters:
             name: str
-            macronutrient: str
+            meal_of_day: str
+            meal_type: str
+            time: int
             calories: int
             carbs: int
             fats: int
             proteins: int
+            ingredients: Dict[str, int]
 
         """
         self._name = name
-        self._macronutrient = macronutrient
+        self._meal_of_day = meal_of_day
+        self._meal_type = meal_type
+        self._time = time
         self._calories = calories
         self._carbs = carbs
         self._fats = fats
         self._protein = protein
-        
-    def getName(self) -> str:
-        return self._name   
-        
-    def getMacronutrient(self) -> str:
-        return self._macronutrient
+        self._ingredients = ingredients
+       
+    def get_name(self) -> str:
+        return self._name
+    
+    def get_meal_of_day(self) -> str:
+        return self._meal_of_day
+    
+    def get_meal_type(self) -> str:
+        return self._meal_type
+    
+    def get_time(self) -> str:
+        return self._time
 
-    def getCalories(self) -> int:
+    def get_calories(self) -> int:
         return self._calories
 
-    def getCarbs(self) -> int:
+    def get_carbs(self) -> int:
         return self._carbs
 
-    def getFats(self) -> int:
+    def get_fats(self) -> int:
         return self._fats
 
-    def getProteins(self) -> int:
+    def get_proteins(self) -> int:
         return self._proteins
 
 
 # ------------Functions below make the main function cleaner-------------------
 
+def loopJSON() -> None:
 
+    # For every food in data
+    for detail in data['details']:
+        mealobj = Meal(detail['meal'], detail['meal_of_day'],
+                               detail['meal_type'], detail['time'],
+                               detail['calories'], detail['carbs'], 
+                               detail['fats'], detail['protein'], 
+                               detail['ingredients'])
+        
+        meal_name = mealobj.get_name()
+        meal_types[detail['meal_type']].append(meal_name)
 
 
 #------------------------------End Of Functions--------------------------------
@@ -84,10 +100,7 @@ class Meal:
 
 if __name__ == '__main__':
 
-    print("Is this for breakfast, lunch or dinner?")
-    meal_of_day = input("")
-    f = open('data.json')
-    data = json.load(f)
+
     
     # Meals
     calorie_surplus = []
@@ -97,8 +110,12 @@ if __name__ == '__main__':
     
     meal_types = {
         "calorie surplus": calorie_surplus,
-        "high in protein": high_in_protein,
-        "high in fats": high_in_fats
+        "high protein": high_protein,
+        "high fats": high_fats,
+        "high carbs": high_carbs
     }
-
+    f = open('data.json')
+    data = json.load(f)
+    loopJSON()
+    pprint.pprint(meal_types)
     f.close()
