@@ -41,3 +41,6 @@ Jan 27, 2022:
         - Changed name of class to meal
         - Added new details to json file
     - Added meal types
+    - fixed meal class
+    - added new meal
+    - added loopJson function
