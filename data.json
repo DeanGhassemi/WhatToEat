@@ -2,8 +2,8 @@
     "details" : [{
         "meal" : "scrambled egg toast",
         "meal_of_day" : "breakfast",
-        "meal_type": "calorie_surplus",
-        "time": "5 minutes",
+        "meal_type": "calorie surplus",
+        "time": 30,
         "calories" : 340,
         "carbs" : 16,
         "fats" : 16,
@@ -18,11 +18,12 @@
     {
         "meal" : "classic",
         "meal_of_day" : "breakfast",
-        "meal_type": "high_fats",
-        "calories" : "650",
-        "carbs" : "32",
-        "fats" : "51",
-        "protein" : "31",
+        "meal_type": "high fats",
+        "time": 30,
+        "calories" : 650,
+        "carbs" : 32,
+        "fats" : 51,
+        "protein" : 31,
         "ingredients": {
             "egg": 2,
             "milk": 1,
@@ -30,23 +31,42 @@
             "turkey_bacon": 3,
             "garlic cloves": 2,
             "russet potato": 1,
-            "avocado oil": 2
+            "avocado oil": 2,
+            "seasoning": ["paprika", "garlic powder", "onion powder", "salt", "pepper"]
         }
     },
     {
         "meal" : "south asian spaghetti",
         "meal_of_day" : "lunch",
-        "meal_type": "high_carbs",
-        "calories" : "1950",
-        "carbs" : "176",
-        "fats" : "86",
-        "protein" : "103",
+        "meal_type": "high carbs",
+        "time": 30,
+        "calories" : 1950,
+        "carbs" : 176,
+        "fats" : 86,
+        "protein" : 103,
         "ingredients": {
             "spaghetthi": 2,
             "tomato sauce": 1,
             "garlic cloves": 2,
             "ground beef": 1,
-            "avocado oil": 1
+            "avocado oil": 1,
+            "seasoning": ["salt", "tumeric", "cumin", "corrander", "paprika"]
+        }
+    },
+    {
+        "meal" : "butterfly chicken and rice",
+        "meal_of_day" : "dinner",
+        "meal_type": "calorie surplus",
+        "time": 15,
+        "calories" : 420,
+        "carbs" : 35,
+        "fats" : 17,
+        "protein" : 28,
+        "ingredients": {
+            "basamati rice": 1,
+            "chicken breast": 1,
+            "avocado oil": 1,
+            "seasoning": ["paprika", "salt", "pepper", "garlic powder", "onion powder"]
         }
     }
 ]
