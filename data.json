@@ -1,0 +1,53 @@
+{
+    "details" : [{
+        "meal" : "scrambled egg toast",
+        "meal_of_day" : "breakfast",
+        "meal_type": "calorie_surplus",
+        "time": "5 minutes",
+        "calories" : 340,
+        "carbs" : 16,
+        "fats" : 16,
+        "protein" : 16,
+        "ingredients": {
+            "egg": 2,
+            "bread": 1,
+            "garlic cloves": 2,
+            "avocado oil": 1 
+        }
+    },
+    {
+        "meal" : "classic",
+        "meal_of_day" : "breakfast",
+        "meal_type": "high_fats",
+        "calories" : "650",
+        "carbs" : "32",
+        "fats" : "51",
+        "protein" : "31",
+        "ingredients": {
+            "egg": 2,
+            "milk": 1,
+            "butter": 2,
+            "turkey_bacon": 3,
+            "garlic cloves": 2,
+            "russet potato": 1,
+            "avocado oil": 2
+        }
+    },
+    {
+        "meal" : "south asian spaghetti",
+        "meal_of_day" : "lunch",
+        "meal_type": "high_carbs",
+        "calories" : "1950",
+        "carbs" : "176",
+        "fats" : "86",
+        "protein" : "103",
+        "ingredients": {
+            "spaghetthi": 2,
+            "tomato sauce": 1,
+            "garlic cloves": 2,
+            "ground beef": 1,
+            "avocado oil": 1
+        }
+    }
+]
+}
