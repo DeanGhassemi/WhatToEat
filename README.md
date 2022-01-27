@@ -1,6 +1,7 @@
 # WhatToEat
 
 This project is solving a problem I often have. When I get hungry, I usually do not know what to cook. To solve this problem, I am making a program that will choose what I should make and eat. The program will take an input of ingredients and then find a meal I know how to cook that has carbs, fats and protein. 
+Note: This is a completely personalized project. I am only focused on making it work for my needs
 
 # Plan
 
@@ -17,6 +18,3 @@ To figure out which foods is a carb, fat or protein, I will collect my own data 
 
 Using a JSON file to store information of foods. It's my data file.
 I am using a TrieTree for autocorrect in case the user misspells the word. I will need another data file for a bunch of names of foods.
-
-I have found a python package with foods and nutrition values. I no longer have to collect my own data. I will have to rework my program
-
