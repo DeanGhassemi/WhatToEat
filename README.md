@@ -17,6 +17,3 @@ To figure out which foods is a carb, fat or protein, I will collect my own data 
 
 Using a JSON file to store information of foods. It's my data file.
 I am using a TrieTree for autocorrect in case the user misspells the word. I will need another data file for a bunch of names of foods.
-
-I have found a python package with foods and nutrition values. I no longer have to collect my own data. I will have to rework my program
-
